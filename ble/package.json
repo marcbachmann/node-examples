@@ -1,0 +1,13 @@
+{
+  "name": "example-ble",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Marc Bachmann <marc.brookman@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "ble-bean": "^1.0.0",
+    "noble": "^0.3.5"
+  }
+}

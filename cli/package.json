@@ -1,0 +1,14 @@
+{
+  "name": "example-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Marc Bachmann <marc.brookman@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^0.8.0",
+    "lodash": "^2.4.1",
+    "request": "^2.45.0",
+    "shortid": "^2.0.1"
+  }
+}
