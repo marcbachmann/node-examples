@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Foo bar</title>
+</head>
+<body>
+  <script>
+    var _ = require('lodash');
+    var fs = require('fs');
+
+    if (!window.location.search) {
+      fs.readdir('/var/log', function(err, files) {
+        if (err) throw err;
+
+        files = files.filter(function(filename){return /\.log/.test(filename)});
+        document.write('Files:<br/>');
+        _.each(files, function(file) {
+          string = '<a href="{{url}}">{{file}}</a><br/>'
+            .replace('{{url}}', window.location.href+'?'+file)
+            .replace('{{file}}', file);
+          document.write(string);
+        });
+      });
+    }
+
+    else {
+      filename = window.location.search.substring(1);
+      document.write('File:<br/>')
+      file = fs.createReadStream('/var/log/'+filename);
+      file.on('error', function(err){
+        if (err) throw err;
+      });
+
+      file.on('data', function(data){
+        document.write(data.toString())
+      });
+    }
+
+  </script>
+</body>
+</html>
