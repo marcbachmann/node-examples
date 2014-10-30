@@ -3,7 +3,6 @@ inquirer = require('inquirer')
 shortid = require('shortid')
 
 shortid.seed(Math.random())
-config = require('./config')
 util = require('./lib/util')
 User = require('./models/user')
 
@@ -70,7 +69,7 @@ askUserAction = (user, callback) ->
 
 
 module.exports = (callback) ->
-  User.select config.madmimi.newUsersList, (err, user) ->
+  User.select '', (err, user) ->
     return callback(err) if err
     return askUserAction(user, callback) if user
 

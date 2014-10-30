@@ -1,6 +1,5 @@
 _ = require('lodash')
 inquirer = require('inquirer')
-config = require('../config')
 util = require('../lib/util')
 data = require('../lib/data')
 
